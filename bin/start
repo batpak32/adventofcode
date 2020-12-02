@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "date"
+require "fileutils"
+
+date = ARGV[0] || (Time.new.localtime + 3600).strftime("%Y/%d")
+
+puts "Creating code and input placeholders for #{date}"
+
+FileUtils.mkdir_p(date)
+FileUtils.touch("#{date}/README.txt")
+FileUtils.touch("#{date}/input.txt")
+FileUtils.touch("#{date}/code.rb")
+
+puts "DONE"
